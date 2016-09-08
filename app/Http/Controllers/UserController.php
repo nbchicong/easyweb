@@ -11,15 +11,13 @@ use Illuminate\Http\Request;
 use Input;
 use Validator;
 
-class UserController extends Controller
-{
+class UserController extends AbstractController {
     /**
      * Get user current context.
      *
      * @return JSON
      */
-    public function getMe()
-    {
+    public function getMe() {
         $user = Auth::user();
 
         return response()->success($user);
@@ -30,8 +28,7 @@ class UserController extends Controller
      *
      * @return JSON success message
      */
-    public function putMe(Request $request)
-    {
+    public function putMe(Request $request) {
         $user = Auth::user();
 
         $this->validate($request, [
@@ -88,8 +85,7 @@ class UserController extends Controller
      *
      * @return JSON
      */
-    public function getIndex()
-    {
+    public function getIndex() {
         $users = User::all();
 
         return response()->success(compact('users'));

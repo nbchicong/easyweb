@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\AbstractController;
 use App\PasswordReset;
 use App\User;
 use Illuminate\Http\Request;
 use Mail;
 
-class PasswordResetController extends Controller
+class PasswordResetController extends AbstractController
 {
     public function sendResetLinkEmail(Request $request)
     {

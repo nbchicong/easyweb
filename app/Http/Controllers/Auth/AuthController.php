@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\AbstractController;
 use App\User;
 use Auth;
 use Bican\Roles\Models\Role;
@@ -11,7 +11,7 @@ use JWTAuth;
 use Mail;
 use Socialite;
 
-class AuthController extends Controller
+class AuthController extends AbstractController
 {
     /**
      * Get all roles and their corresponding permissions.

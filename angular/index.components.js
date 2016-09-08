@@ -1,3 +1,4 @@
+import {EntryListsComponent} from './app/components/entry-lists/entry-lists.component';
 import { TablesSimpleComponent } from './app/components/tables-simple/tables-simple.component'
 import { UiModalComponent } from './app/components/ui-modal/ui-modal.component'
 import { UiTimelineComponent } from './app/components/ui-timeline/ui-timeline.component'
@@ -28,6 +29,7 @@ import { LoginFormComponent } from './app/components/login-form/login-form.compo
 import { RegisterFormComponent } from './app/components/register-form/register-form.component'
 
 angular.module('app.components')
+	.component('entryLists', EntryListsComponent)
   .component('tablesSimple', TablesSimpleComponent)
   .component('uiModal', UiModalComponent)
   .component('uiTimeline', UiTimelineComponent)
