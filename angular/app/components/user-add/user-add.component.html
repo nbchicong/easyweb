@@ -2,13 +2,13 @@
     <ol class="breadcrumb">
         <li><a ui-sref="app.landing"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a ui-sref="app.userlist">User Lists</a></li>
-        <li class="active">Edit User</li>
+        <li class="active">Add user</li>
     </ol>
 </section>
 <form class="form-horizontal" name="userForm" ng-submit="vm.save(userForm.$valid)" novalidate>
     <section class="content-toolbar">
-        <a ui-sref="app.userlist" class="btn btn-default"><i class="fa fa-angle-double-left"></i> Back</a>
-        <button type="submit" class="btn btn-primary">Update</button>
+        <a ui-sref="app.userlist" class="btn btn-default"><i class="fa fa-arrow-left"></i> Back</a>
+        <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Lưu</button>
     </section>
     <section class="content">
         <div class="row">
@@ -21,7 +21,7 @@
                      ng-class="{ 'has-error': userForm.name.$invalid && ( vm.formSubmitted || userForm.name.$touched) }">
                     <label class="col-sm-2 control-label">Name</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" ng-model="vm.usereditdata.data.name" name="name"
+                        <input type="text" class="form-control" ng-model="vm.name" name="name"
                                placeholder="Name" required>
                         <p ng-show="userForm.name.$error.required && ( vm.formSubmitted || userForm.name.$touched)"
                            class="help-block">Name is required.</p>
@@ -31,7 +31,7 @@
                      ng-class="{ 'has-error': userForm.email.$invalid && ( vm.formSubmitted || userForm.email.$touched) }">
                     <label class="col-sm-2 control-label">Email</label>
                     <div class="col-sm-10">
-                        <input type="email" class="form-control" ng-model="vm.usereditdata.data.email" name="email"
+                        <input type="email" class="form-control" ng-model="vm.email" name="email"
                                placeholder="Email" required>
                         <p ng-show="userForm.email.$error.required && ( vm.formSubmitted || userForm.email.$touched)"
                            class="help-block">Email is required.</p>
@@ -44,7 +44,7 @@
                     <div class="col-sm-10">
                         <div class="checkbox" ng-repeat="role in vm.systemRoles">
                             <label>
-                                <input type="checkbox" checklist-model="vm.usereditdata.data.role"
+                                <input type="checkbox" checklist-model="vm.role"
                                        checklist-value="role.id"> {{role.name}}
                             </label>
                         </div>

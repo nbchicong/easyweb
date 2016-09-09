@@ -7,7 +7,7 @@ use Auth;
 use Bican\Roles\Models\Permission;
 use Bican\Roles\Models\Role;
 use Hash;
-use Illuminate\Http\Request;
+use Dingo\Api\Http\Request;
 use Input;
 use Validator;
 
@@ -25,7 +25,7 @@ class UserController extends AbstractController {
 
     /**
      * Update user current context.
-     *
+     * @param Request $request
      * @return JSON success message
      */
     public function putMe(Request $request) {

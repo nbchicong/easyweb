@@ -180,6 +180,20 @@ export function RoutesConfig ($stateProvider, $urlRouterProvider) {
         userId: null
       }
     })
+    .state('app.useradd', {
+      url: '/user-add',
+      data: {
+        auth: true
+      },
+      views: {
+        'main@app': {
+          template: '<user-add></user-add>'
+        }
+      },
+      params: {
+        alerts: null
+      }
+    })
     .state('app.userroles', {
       url: '/user-roles',
       data: {

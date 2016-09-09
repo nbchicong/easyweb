@@ -10,15 +10,18 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 
 abstract class AbstractController extends BaseController {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+  use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-//    Fixes dingo/api form request validation https://github.com/dingo/api/wiki/Errors-And-Error-Responses#form-requests
-    public function validate(Request $request, array $rules, array $messages = [], array $customAttributes = [])
-    {
-        $validator = $this->getValidationFactory()->make($request->all(), $rules, $messages, $customAttributes);
+  //    Fixes dingo/api form request validation https://github.com/dingo/api/wiki/Errors-And-Error-Responses#form-requests
+  public function validate(Request $request, array $rules, array $messages = [], array $customAttributes = []) {
+    $validator = $this->getValidationFactory()->make($request->all(), $rules, $messages, $customAttributes);
 
-        if ($validator->fails()) {
-            throw new ValidationHttpException($validator->errors());
-        }
+    if ($validator->fails()) {
+      throw new ValidationHttpException($validator->errors());
     }
+  }
+
+  protected function getParams(Request $request, $params) {
+    return $request->input($params);
+  }
 }
