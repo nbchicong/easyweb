@@ -39,7 +39,7 @@ elixir(function (mix) {
     ],
     styles = [
       './public/css/vendor.css',
-      './public/css/layout.css',
+      './public/src/layout.css',
       './public/css/app.css'
     ],
     karmaJsDir = [
