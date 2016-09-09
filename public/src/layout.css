@@ -1,0 +1,41 @@
+.navbar-nav>.user-menu .user-image {
+    width: 30px;
+    height: 30px;
+    margin-top: -5px;
+}
+.content-header,
+.content-toolbar {
+    padding: 5px;
+    border-bottom: 1px solid #dedede;
+    background: #ecf0f5 !important;
+    position: fixed;
+    width: 100%;
+    top: 50px;
+    z-index: 1;
+}
+.content-toolbar {
+    max-height: 45px;
+    overflow: hidden;
+    top: 91px;
+}
+.content-header>.breadcrumb {
+    float: none;
+    position: static;
+    top: 0;
+    right: 0;
+    font-size: 14px;
+    padding: 5px;
+}
+.content {
+    padding: 5px;
+    background: #FFFFFF;
+    margin-top: 86px;
+}
+
+@media (max-width: 991px) {
+    .content-header>.breadcrumb {
+        margin-top: 0;
+        padding-left: 0;
+        background: transparent;
+    }
+}
